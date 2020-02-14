@@ -10,7 +10,10 @@ while (input !== null) {
   console.log(numbers);
 }
 
-for (let i = 0; i < numbers.length; i += 1) {
-  total += numbers[i];
+for (const number of numbers) {
+  total += number;
 }
+// for (let i = 0; i < numbers.length; i += 1) {
+//   total += numbers[i];
+// }
 console.log(`Total sum is ${total}`);
