@@ -89,11 +89,23 @@ console.log(getNamesSortedByFriendsCount(users));
 // и они должны быть отсортированы в алфавитном порядке.
 
 const getSortedUniqueSkills = users => {
+  // return users
+  // .reduce((allSkills, user) => [...allSkills, ...user.skills], [])
+  // .filter((skill, index, allSkills) => allSkills.indexOf(skill) === index)
+  // .sort();
+
   return users
-    .reduce((allSkills, user) => [...allSkills, ...user.skills], [])
-    .filter((skill, index, allSkills) => allSkills.indexOf(skill) === index)
+    .reduce((allSkills, { skills }) => {
+      skills.forEach(skill => {
+        if (!allSkills.includes(skill)) {
+          allSkills.push(skill);
+        }
+      });
+
+      return allSkills;
+    }, [])
     .sort();
 };
 
-console.log(getSortedUniqueSkills(users));
+console.log('unique skills:', getSortedUniqueSkills(users));
 // [ 'adipisicing', 'amet', 'anim', 'commodo', 'culpa', 'elit', 'ex', 'ipsum', 'irure', 'laborum', 'lorem', 'mollit', 'non', 'nostrud', 'nulla', 'proident', 'tempor', 'velit', 'veniam' ]
