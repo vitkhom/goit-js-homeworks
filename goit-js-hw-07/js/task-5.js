@@ -15,3 +15,5 @@ function nameChange(e) {
     output.textContent = 'незнакомец';
   }
 }
+
+// output.textContent = output.textContent ? target.value : 'незнакомец'; // тернарний оператор
