@@ -8,7 +8,7 @@ const refs = {
   timer: document.querySelector('#timer-1'),
 };
 
-const targetDate = new Date('May 13, 2020').getTime();
+const targetDate = new Date('June 13, 2020').getTime();
 
 const intervalId = setInterval(function () {
   const currentDate = Date.now();

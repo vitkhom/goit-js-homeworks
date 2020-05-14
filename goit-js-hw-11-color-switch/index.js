@@ -29,14 +29,14 @@ const colorSwitch = {
 
     this.isActive = true;
 
-    this.timerId = setInterval(() => {
+    this.intervalId = setInterval(() => {
       const color = colors[randomIntegerFromInterval(0, colors.length - 1)];
       refs.body.setAttribute('style', `background-color: ${color};`);
     }, 1000);
   },
 
   stop() {
-    clearInterval(this.timerId);
+    clearInterval(this.intervalId);
     this.isActive = false;
   },
 };
